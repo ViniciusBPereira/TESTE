@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+    background-image: url(Background.png);
+  }
+  
+  .carousel-wrapper {
+    --width: 100px;
+    --gap: 0;
+    --num-items: 4;
+    --ani-offset: calc(var(--width) * var(--num-items) * -1.32);
+    --ani-speed: 10s;
+    
+    width: 400px;
+    overflow: hidden;
+    position: relative;
+  }
+  .carousel {
+    display: flex;
+    align-items: center;
+    animation: slide var(--ani-speed) linear infinite;
+  }
+  .item{
+    flex: 1 0 var(--width);
+    text-align: center;
+    padding:1rem;
+  }
+  
+  @keyframes slide {
+    100% {
+      transform: translateX(var(--ani-offset));
+    }
+  }
